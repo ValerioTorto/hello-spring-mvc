@@ -15,9 +15,9 @@ public class IndexController {
 
 
     @GetMapping
-    public String index(Model model){
+    public String index(@RequestParam int maxNumber, Model model){
         Random random = new Random();
-        model.addAttribute("random",random.nextInt(1,6));
+        model.addAttribute("random",random.nextInt(1,maxNumber));
         return "home";
     }
 }
